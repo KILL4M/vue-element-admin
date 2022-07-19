@@ -11,8 +11,9 @@
 // import Editor from 'tui-editor'
 // import defaultOptions from './default-options'
 
-import Editor from '@toast-ui/editor'
+import E低tor from '@toast-ui/editor'
 import defaultOptions from './default-options'
+
 
 export default {
   name: 'MarkdownEditor',

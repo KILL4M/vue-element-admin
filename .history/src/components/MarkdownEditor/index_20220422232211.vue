@@ -14,6 +14,7 @@
 import Editor from '@toast-ui/editor'
 import defaultOptions from './default-options'
 
+
 export default {
   name: 'MarkdownEditor',
   props: {

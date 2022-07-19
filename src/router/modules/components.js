@@ -13,6 +13,12 @@ const componentsRouter = {
   },
   children: [
     {
+      path: 'popover',
+      component: () => import('@/views/components-demo/popover'),
+      name: 'PopoverDemo',
+      meta: { title: 'popover' }
+    },
+    {
       path: 'tinymce',
       component: () => import('@/views/components-demo/tinymce'),
       name: 'TinymceDemo',

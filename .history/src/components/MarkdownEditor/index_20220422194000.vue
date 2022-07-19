@@ -4,14 +4,11 @@
 
 <script>
 // deps for editor
-// import 'codemirror/lib/codemirror.css' // codemirror
-// import 'tui-editor/dist/tui-editor.css' // editor ui
-// import 'tui-editor/dist/tui-editor-contents.css' // editor content
+import 'codemirror/lib/codemirror.css' // codemirror
+import 'tui-editor/dist/tui-editor.css' // editor ui
+import 'tui-editor/dist/tui-editor-contents.css' // editor content
 
-// import Editor from 'tui-editor'
-// import defaultOptions from './default-options'
-
-import Editor from '@toast-ui/editor'
+import Editor from 'tui-editor'
 import defaultOptions from './default-options'
 
 export default {
@@ -65,8 +62,8 @@ export default {
   },
   watch: {
     value(newValue, preValue) {
-      if (newValue !== preValue && newValue !== this.editor.getMarkdown()) {
-        this.editor.setMarkdown(newValue)
+      if (newValue !== preValue && newValue !== this.editor.getValue()) {
+        this.editor.setValue(newValue)
       }
     },
     language(val) {
@@ -93,10 +90,10 @@ export default {
         ...this.editorOptions
       })
       if (this.value) {
-        this.editor.setMarkdown(this.value)
+        this.editor.setValue(this.value)
       }
       this.editor.on('change', () => {
-        this.$emit('input', this.editor.getMarkdown())
+        this.$emit('input', this.editor.getValue())
       })
     },
     destroyEditor() {
@@ -105,10 +102,10 @@ export default {
       this.editor.remove()
     },
     setValue(value) {
-      this.editor.setMarkdown(value)
+      this.editor.setValue(value)
     },
     getValue() {
-      return this.editor.getMarkdown()
+      return this.editor.getValue()
     },
     setHtml(value) {
       this.editor.setHtml(value)

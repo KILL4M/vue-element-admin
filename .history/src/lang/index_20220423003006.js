@@ -42,7 +42,7 @@ export function getLanguage() {
       return locale
     }
   }
-  return 'zn'
+  return 'en'
 }
 const i18n = new VueI18n({
   // set locale

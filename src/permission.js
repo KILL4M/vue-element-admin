@@ -70,5 +70,8 @@ router.beforeEach(async(to, from, next) => {
 
 router.afterEach(() => {
   // finish progress bar
+  //todo 权限控制Own 防止调用多次请求
+  // store.commit('dicts/CLEAN_DICT')
+
   NProgress.done()
 })
